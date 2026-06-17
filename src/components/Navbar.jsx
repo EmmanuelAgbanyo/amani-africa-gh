@@ -42,11 +42,11 @@ export default function Navbar() {
         </button>
       </div>
       <div className={`mobile-menu ${mobileMenuOpen ? 'open' : ''}`}>
-        <Link href="/" className="mobile-link" onClick={() => setMobileMenuOpen(false)}>Home</Link>
-        <Link href="/about" className="mobile-link" onClick={() => setMobileMenuOpen(false)}>Who We Are</Link>
-        <Link href="/how-we-work" className="mobile-link" onClick={() => setMobileMenuOpen(false)}>How We Work</Link>
-        <Link href="/resources" className="mobile-link" onClick={() => setMobileMenuOpen(false)}>Resources</Link>
-        <Link href="/donate" className="btn btn-primary mt-2" onClick={() => setMobileMenuOpen(false)}>Donate Now</Link>
+        <Link href="/" className="mobile-link" style={{ transitionDelay: mobileMenuOpen ? '0.1s' : '0s' }} onClick={() => setMobileMenuOpen(false)}>Home</Link>
+        <Link href="/about" className="mobile-link" style={{ transitionDelay: mobileMenuOpen ? '0.2s' : '0s' }} onClick={() => setMobileMenuOpen(false)}>Who We Are</Link>
+        <Link href="/how-we-work" className="mobile-link" style={{ transitionDelay: mobileMenuOpen ? '0.3s' : '0s' }} onClick={() => setMobileMenuOpen(false)}>How We Work</Link>
+        <Link href="/resources" className="mobile-link" style={{ transitionDelay: mobileMenuOpen ? '0.4s' : '0s' }} onClick={() => setMobileMenuOpen(false)}>Resources</Link>
+        <Link href="/donate" className="mobile-link" style={{ transitionDelay: mobileMenuOpen ? '0.5s' : '0s', marginTop: '1rem', color: 'var(--color-primary)' }} onClick={() => setMobileMenuOpen(false)}>Donate Now</Link>
       </div>
     </nav>
   );
