@@ -89,16 +89,9 @@ export default function Home() {
       </header>
 
       {/* Impact Stats Section */}
-      <section style={{ 
-        position: 'relative', zIndex: 20, marginTop: '-60px', padding: '0 2rem'
-      }}>
-        <div className="container">
-          <div className="glass-panel" style={{ 
-            background: 'rgba(255, 255, 255, 0.95)', padding: '3rem', 
-            boxShadow: 'var(--shadow-lg)', display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(250px, 1fr))', 
-            gap: '2rem', textAlign: 'center', borderRadius: '24px',
-            border: '2px solid var(--color-primary)'
-          }}>
+      <section className="container" style={{ position: 'relative', zIndex: 20, marginTop: '-60px' }}>
+        <div className="glass-panel impact-stats-panel" style={{ backgroundColor: '#fff', borderTop: '4px solid var(--color-primary)' }}>
+          <div className="grid grid-3 text-center">
             <div className="fade-up" style={{ transitionDelay: '0.1s' }}>
               <Users size={40} style={{ color: 'var(--color-primary)', margin: '0 auto 1rem' }} />
               <div className="stat-number" data-target="50" data-suffix="+" style={{ fontSize: '3rem', fontWeight: 800, color: 'var(--color-heading)', lineHeight: 1 }}>0</div>
