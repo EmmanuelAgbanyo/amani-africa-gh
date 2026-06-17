@@ -118,6 +118,53 @@ export default function Home() {
         </div>
       </section>
 
+      {/* Impact In Action Gallery */}
+      <section className="container gallery-section">
+        <div className="text-center fade-up" style={{ marginBottom: '4rem' }}>
+          <h2 className="section-title">Impact In Action</h2>
+          <div className="divider"></div>
+        </div>
+        
+        <div className="picture-grid" style={{ gridTemplateColumns: 'repeat(auto-fit, minmax(250px, 1fr))' }}>
+          <div className="picture-card fade-up" style={{ transitionDelay: '0.1s' }}>
+            <div className="picture-bg" style={{ backgroundImage: "url('/impact-1.jpg')" }}></div>
+            <div className="picture-overlay"></div>
+            <div className="picture-content">
+              <h3 className="picture-title">Community Empowerment</h3>
+              <p className="picture-desc">Fostering strong relationships and building the capacity of local leaders to drive sustainable development.</p>
+            </div>
+          </div>
+          
+          <div className="picture-card fade-up" style={{ transitionDelay: '0.2s' }}>
+            <div className="picture-bg" style={{ backgroundImage: "url('/impact-2.jpg')" }}></div>
+            <div className="picture-overlay"></div>
+            <div className="picture-content">
+              <h3 className="picture-title">Sustainable Livelihoods</h3>
+              <p className="picture-desc">Equipping individuals with the skills and support needed to thrive and uplift their families.</p>
+            </div>
+          </div>
+          
+          <div className="picture-card fade-up" style={{ transitionDelay: '0.3s' }}>
+            <div className="picture-bg" style={{ backgroundImage: "url('/impact-3.jpg')" }}></div>
+            <div className="picture-overlay"></div>
+            <div className="picture-content">
+              <h3 className="picture-title">Local Partnerships</h3>
+              <p className="picture-desc">Working hand-in-hand with communities to identify needs and implement effective solutions.</p>
+            </div>
+          </div>
+
+          <div className="picture-card fade-up" style={{ transitionDelay: '0.4s' }}>
+            <div className="picture-bg" style={{ backgroundImage: "url('/impact-4.jpg')" }}></div>
+            <div className="picture-overlay"></div>
+            <div className="picture-content">
+              <h3 className="picture-title">Agriculture & Growth</h3>
+              <p className="picture-desc">Promoting agricultural development and food security through hands-on community farming projects.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+
       <section className="container feature-section" style={{ padding: '8rem 0' }}>
         <div className="text-center fade-up" style={{ marginBottom: '4rem' }}>
           <h2 className="section-title">Our Core Pillars</h2>

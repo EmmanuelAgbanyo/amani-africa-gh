@@ -391,3 +391,39 @@ main { flex: 1; }
 .custom-scrollbar::-webkit-scrollbar-track { background: transparent; }
 .custom-scrollbar::-webkit-scrollbar-thumb { background: rgba(255,255,255,0.1); border-radius: 10px; }
 .custom-scrollbar::-webkit-scrollbar-thumb:hover { background: rgba(255,255,255,0.2); }
+
+/* Picture Cards */
+.gallery-section { padding: 4rem 0 8rem; }
+.picture-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; }
+
+.picture-card {
+  position: relative; border-radius: 24px; overflow: hidden; height: 400px;
+  box-shadow: var(--shadow-lg); transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+  display: flex; align-items: flex-end; cursor: pointer; border: 2px solid transparent;
+}
+.picture-card:hover { transform: translateY(-10px); box-shadow: 0 30px 60px rgba(0,0,0,0.4); border-color: var(--color-primary); }
+
+.picture-bg {
+  position: absolute; top: 0; left: 0; width: 100%; height: 100%;
+  background-size: cover; background-position: center; transition: transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+  z-index: 1;
+}
+.picture-card:hover .picture-bg { transform: scale(1.1); }
+
+.picture-overlay {
+  position: absolute; top: 0; left: 0; width: 100%; height: 100%;
+  background: linear-gradient(to bottom, rgba(15,23,42,0.1) 0%, rgba(15,23,42,0.8) 100%);
+  z-index: 2; transition: opacity 0.4s ease;
+}
+.picture-card:hover .picture-overlay { background: linear-gradient(to bottom, rgba(15,23,42,0.3) 0%, rgba(15,23,42,0.9) 100%); }
+
+.picture-content {
+  position: relative; z-index: 3; padding: 2rem; width: 100%;
+  background: rgba(15, 23, 42, 0.4); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px);
+  border-top: 1px solid rgba(255,255,255,0.1); transform: translateY(20px); transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.picture-card:hover .picture-content { transform: translateY(0); background: rgba(15, 23, 42, 0.6); }
+
+.picture-title { color: #fff; font-size: 1.5rem; margin-bottom: 0.5rem; font-weight: 600; text-shadow: 0 2px 4px rgba(0,0,0,0.5); }
+.picture-desc { color: rgba(255,255,255,0.9); font-size: 0.95rem; line-height: 1.5; opacity: 0.8; transition: opacity 0.4s; }
+.picture-card:hover .picture-desc { opacity: 1; }
