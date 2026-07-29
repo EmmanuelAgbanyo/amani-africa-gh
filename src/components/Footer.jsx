@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import { Mail, MapPin, Phone } from 'lucide-react';
 
 const Facebook = ({ size = 20 }) => (
   <svg xmlns="http://www.w3.org/2000/svg" width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
@@ -12,19 +13,12 @@ const Instagram = ({ size = 20 }) => (
   <svg xmlns="http://www.w3.org/2000/svg" width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><rect width="20" height="20" x="2" y="2" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" x2="17.51" y1="6.5" y2="6.5"/></svg>
 );
 
-const Linkedin = ({ size = 20 }) => (
-  <svg xmlns="http://www.w3.org/2000/svg" width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect width="4" height="12" x="2" y="9"/><circle cx="4" cy="4" r="2"/></svg>
-);
-
-const Tiktok = ({ size = 20 }) => (
-  <svg xmlns="http://www.w3.org/2000/svg" width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M9 12a4 4 0 1 0 4 4V4a5 5 0 0 0 5 5"/></svg>
-);
-
 export default function Footer() {
   return (
     <footer className="footer">
       <div className="container">
         <div className="footer-grid">
+          {/* Brand Column */}
           <div className="footer-brand">
             <div className="footer-logo-container">
               <img src="/amani-logo.jpeg" alt="Amani Africa Logo" className="footer-logo-img" />
@@ -32,6 +26,8 @@ export default function Footer() {
             </div>
             <p>Empowering people, strengthening communities, supporting local development, promoting civic awareness, and creating sustainable partnerships for national development.</p>
           </div>
+          
+          {/* Quick Links Column */}
           <div className="footer-links">
             <h3>Explore</h3>
             <ul>
@@ -41,19 +37,32 @@ export default function Footer() {
               <li><Link href="/resources">Resources</Link></li>
             </ul>
           </div>
+          
+          {/* Contact & Social Column */}
           <div className="footer-contact">
-            <h3>Get in Touch</h3>
-            <p>Join us in mobilizing resources for sustainable local transformation.</p>
+            <h3>Contact Us</h3>
+            <ul style={{ display: 'flex', flexDirection: 'column', gap: '1rem', marginBottom: '2rem' }}>
+              <li style={{ display: 'flex', alignItems: 'center', gap: '0.8rem', color: 'rgba(255,255,255,0.7)' }}>
+                <MapPin size={18} color="var(--color-primary)" /> Accra, Ghana
+              </li>
+              <li style={{ display: 'flex', alignItems: 'center', gap: '0.8rem', color: 'rgba(255,255,255,0.7)' }}>
+                <Mail size={18} color="var(--color-primary)" /> info@amaniafrica.org
+              </li>
+              <li style={{ display: 'flex', alignItems: 'center', gap: '0.8rem', color: 'rgba(255,255,255,0.7)' }}>
+                <Phone size={18} color="var(--color-primary)" /> +233 (0) 123 456 789
+              </li>
+            </ul>
+            
             <div className="social-links">
-              <a href="https://x.com/amaniafricagh?s=11" target="_blank" rel="noopener noreferrer" className="social-icon"><Twitter size={20} /></a>
-              <a href="https://www.instagram.com/amaniafrica_gh?igsh=MTR5M3QxaThvcTAzaA%3D%3D&utm_source=qr" target="_blank" rel="noopener noreferrer" className="social-icon"><Instagram size={20} /></a>
-              <a href="https://www.tiktok.com/@amaniafrica?_r=1&_t=ZS-97EMC78GUQn" target="_blank" rel="noopener noreferrer" className="social-icon"><Tiktok size={20} /></a>
-              <a href="#" className="social-icon"><Facebook size={20} /></a>
+              <a href="https://x.com/amaniafricagh?s=11" target="_blank" rel="noopener noreferrer" className="social-icon" aria-label="Twitter"><Twitter size={18} /></a>
+              <a href="https://www.instagram.com/amaniafrica_gh" target="_blank" rel="noopener noreferrer" className="social-icon" aria-label="Instagram"><Instagram size={18} /></a>
+              <a href="#" className="social-icon" aria-label="Facebook"><Facebook size={18} /></a>
             </div>
           </div>
         </div>
+        
         <div className="footer-bottom">
-          <p>&copy; 2026 AMANI Africa. All rights reserved.</p>
+          <p>&copy; {new Date().getFullYear()} AMANI Africa. All rights reserved.</p>
         </div>
       </div>
     </footer>
